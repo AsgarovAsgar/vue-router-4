@@ -13,8 +13,10 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+const route = useRoute()
 const router = useRouter()
+
 
 const form = ref({
   username: '',
@@ -23,6 +25,7 @@ const form = ref({
 
 const handleSubmit = () => {
   window.user = form.value.username
-  router.push({ name: 'protected' })
+  const redirectPath = route.query.redirect || '/protected'
+  router.push(redirectPath)
 }
 </script>
