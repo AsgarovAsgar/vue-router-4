@@ -9,9 +9,21 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
-    component: () => import('@/views/AboutView.vue'),
+    path: "/protected",
+    name: "protected",
+    component: () => import('@/views/ProtectedView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/invoices',
+    name: 'invoices',
+    component: () => import('@/views/InvoicesView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/LoginView.vue')
   },
   {
     path: '/destination/:id/:slug',
@@ -55,5 +67,11 @@ const router = createRouter({
     })
   }
 });
+
+router.beforeEach((to, from) => {
+  if(to.meta.requiresAuth && !window.user) {
+    return { name: 'login', query: { redirect: to.fullPath } }
+  }
+})
 
 export default router;
