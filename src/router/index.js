@@ -51,6 +51,11 @@ const routes = [
     ]
   },
   {
+    path: '/mistakes/unintentionally-mutating-props',
+    name: 'unintentionally-mutating-props',
+    component: () => import('@/views/MistakeLoginView.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('@/views/NotFoundView.vue')
