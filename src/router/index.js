@@ -56,6 +56,11 @@ const routes = [
     component: () => import('@/views/MistakeLoginView.vue')
   },
   {
+    path: '/mistakes/forgetting-to-clean-up-your-manual-event-listeners',
+    name: 'forgetting-to-clean-up-your-manual-event-listeners',
+    component: () => import('@/views/MistakeEventListenerView.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('@/views/NotFoundView.vue')
