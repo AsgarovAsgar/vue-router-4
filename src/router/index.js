@@ -61,6 +61,11 @@ const routes = [
     component: () => import('@/views/MistakeEventListenerView.vue')
   },
   {
+    path: '/mistakes/expecting-changes-to-non-reactive-dependencies-to-trigger-updates',
+    name: 'expecting-changes-to-non-reactive-dependencies-to-trigger-updates',
+    component: () => import('@/views/MistakeNonReactiveDataView.vue')
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('@/views/NotFoundView.vue')
