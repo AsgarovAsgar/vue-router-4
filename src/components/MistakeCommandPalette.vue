@@ -19,6 +19,7 @@ onMounted(() => {
 onUnmounted(() => {
   document.body.removeEventListener('keydown', handleKeyboardShortcut)
 })
+// OR we can use vueuse
 </script>
 
 <template>

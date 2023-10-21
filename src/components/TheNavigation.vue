@@ -25,7 +25,8 @@ const router = useRouter()
 const destinations = ref(sourceData.destinations)
 const mistakes = ref([
   'unintentionally-mutating-props',
-  'forgetting-to-clean-up-your-manual-event-listeners'
+  'forgetting-to-clean-up-your-manual-event-listeners',
+  'expecting-changes-to-non-reactive-dependencies-to-trigger-updates'
 ])
 
 const changeRoute = e => {
