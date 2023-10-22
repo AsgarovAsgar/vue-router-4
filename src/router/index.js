@@ -7,7 +7,12 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    alias: '/home'
   },
+  // {
+  //   path: '/home',
+  //   redirect: { name: 'home' }
+  // },
   {
     path: "/protected",
     name: "protected",
